@@ -1,0 +1,48 @@
+
+<hr>
+<table class="table">
+  <tr>
+    <th scope="col">Backlog</th>
+    <th scope="col">To do</th>
+    <th scope="col">On going</th>
+    <th scope="col">Done</th>
+  </tr>
+
+  <tr *ngFor="let item of arreglo let indice = index" class=borde>
+    <td>
+      <div *ngIf="item.estatus==1" class=borde>
+        {{item.nombreTarea}}
+        <button  type="button" class="btn btn-primary"  [disabled]="item.estatus==4"  (click)="MoverAdelante(indice)">Avanzar</button>
+        <button  type="button" class="btn btn-primary" [disabled]="item.estatus==1"  (click)="MoverAtras(indice)">Atras</button>
+        <button  type="button" class="btn btn-danger" (click)="EliminarTarea(indice)">Eliminar</button>
+      </div>
+    </td>
+    <td>
+      <div *ngIf="item.estatus==2" class=borde>
+        {{item.nombreTarea}}
+        <button  type="button" class="btn btn-primary"  [disabled]="item.estatus==4"(click)="MoverAdelante(indice)">Avanzar</button>
+        <button  type="button" class="btn btn-primary"  [disabled]="item.estatus==1"   (click)="MoverAtras(indice)">Atras</button>
+        <button  type="button" class="btn btn-danger"  (click)="EliminarTarea(indice)">Eliminar</button>
+      </div>
+    </td>
+    <td>
+      <div *ngIf="item.estatus==3" class=borde >
+        {{item.nombreTarea}}
+        <button  type="button" class="btn btn-primary" [disabled]="item.estatus==4" (click)="MoverAdelante(indice)">Avanzar</button>
+        <button  type="button" class="btn btn-primary" [disabled]="item.estatus==1"  (click)="MoverAtras(indice)">Atras</button>
+        <button  type="button" class="btn btn-danger" (click)="EliminarTarea(indice)">Eliminar</button>
+      </div>
+    </td>
+    <td>
+      <div *ngIf="item.estatus==4" class=borde >
+        {{item.nombreTarea}}
+        <button type="button" class="btn btn-primary"  [disabled]="item.estatus==4" (click)="MoverAdelante(indice)">Avanzar</button>
+        <button  type="button" class="btn btn-primary" [disabled]="item.estatus==1" (click)="MoverAtras(indice)">Atras</button>
+        <button  type="button" class="btn btn-danger" (click)="EliminarTarea(indice)">Eliminar</button>
+      </div>
+    </td>
+
+  </tr>
+
+
+</table>

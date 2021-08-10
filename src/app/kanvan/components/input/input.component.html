@@ -1,0 +1,13 @@
+
+<div>
+  <label>Ingresa nueva tarea:</label>
+  <div class="contenedor">
+   <!--  <input type="text" [(ngModel)]="objTarea.nombreTarea"  name="tarea" > -->
+    <input type="text"  [(ngModel)]="objTarea.nombreTarea"  name="tarea"  class="form-control"  aria-describedby="basic-addon2">
+    <button [disabled]="!objTarea.nombreTarea" (click)="addTarea()" type="button" class="btn btn-success" >Agregar Tarea</button>
+  </div>
+  <div>
+    <app-table [arreglo]="arrtarea"></app-table>
+  </div>
+
+</div>
