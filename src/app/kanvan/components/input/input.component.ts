@@ -20,9 +20,21 @@ export class InputComponent implements OnInit {
   addTarea(){
     this.objTarea.estatus=1;
     var objeto = Object.assign({}, this.objTarea);
+
+        if(this.arrtarea.filter((arreglo: { nombreTarea: string; })=>arreglo.nombreTarea==this.objTarea.nombreTarea).length>0){
+          alert("La tarea ya esta registrada")
+        } else{
+          this.arrtarea.push(objeto);
+          this.objTarea.nombreTarea='';
+          console.log(this.arrtarea);
+        }
+
+    }
+/*
     this.arrtarea.push(objeto);
     this.objTarea.nombreTarea='';
     console.log(this.arrtarea);
+ */
 
-}
+
 }
